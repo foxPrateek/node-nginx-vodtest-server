@@ -1,6 +1,6 @@
 
 terraform {
-  required_providers {
+     required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 2.7.0"
@@ -57,7 +57,7 @@ resource "aws_subnet" "default" {
 resource "aws_security_group" "allow_web" {
   name = "allow_http"
   description = "Allow http and ssh inbound traffic"
- vpc_id      = "${aws_vpc.default.id}"
+  vpc_id      = "${aws_vpc.default.id}"
   ingress {
     from_port   = 22
     to_port     = 22
