@@ -7,7 +7,6 @@ sudo snap install docker
 mkdir -p /home/ubuntu/application
 sudo chown -R  ubuntu /home/ubuntu/application
 cd /home/ubuntu/application
-
 touch start
 aws s3 cp   s3://cpe-appserver-bucket/app_dir/docker-compose.yml  /home/ubuntu/application/docker-compose.yml
 aws s3 cp   s3://cpe-appserver-bucket/app_dir/app  /home/ubuntu/application/app  --recursive
