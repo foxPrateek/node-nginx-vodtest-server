@@ -24,16 +24,6 @@ variable "app_data_bucket_name" {
 
 }
 
-variable "private_key_path" {
-  description = "Path to the SSH private key to be used for authentication."
-  default = "privatekey.pem" 
-}
-
-variable "key_name" {
-  description = "Desired name of AWS key pair."
-  default = "apiserver.pem"
-}
-
 variable "aws_region" {
   description = "AWS region to launch servers."
   default     = "ap-south-1"
