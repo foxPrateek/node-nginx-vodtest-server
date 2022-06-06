@@ -1,8 +1,3 @@
-variable "public_key_path" {
-  description = "Path to the SSH public key to be used for authentication."
-  default = "publickey.pem"
-}
-
 
 
 variable "input_bucket_name" {
