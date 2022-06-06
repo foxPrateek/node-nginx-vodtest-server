@@ -8,7 +8,7 @@ Creates 2 docker containers
 
 - excecute.sh script is executed by user_data in EC2 instance during the launch
 
-- execute.sh (1) Installs all needed modules (2) copies data from app_dir to S3 bucket .
+- execute.sh (1) Installs all needed modules (2) copies scripts and data from S3 bucket to EC2 application  .
 
 - SSL support is provided in nginx.conf , further need to add cert and private key .
 
