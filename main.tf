@@ -25,6 +25,8 @@ provider "docker" {
   host = "tcp://${aws_instance.web.public_ip}:2376/"
 }
 
+/*
+
 resource "aws_vpc" "default" {
   cidr_block = "10.0.0.0/16"
   enable_dns_hostnames = true
@@ -53,11 +55,11 @@ resource "aws_subnet" "default" {
   }
 }
 
-
+*/
 resource "aws_security_group" "allow_web" {
   name = "allow_http"
   description = "Allow http and ssh inbound traffic"
-  vpc_id      = "${aws_vpc.default.id}"
+//  vpc_id      = "${aws_vpc.main.id}"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -116,7 +118,7 @@ resource "aws_instance" "web" {
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   //security_groups = ["${aws_security_group.allow_web.name}"]
   vpc_security_group_ids = ["${aws_security_group.allow_web.id}"]
-  subnet_id = "${aws_subnet.default.id}"
+  //subnet_id = "${aws_subnet.default.id}"
   tags =  {
     Name = "TestServer"
     Product = "Docker Nginx and Node"
